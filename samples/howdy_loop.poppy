@@ -1,7 +1,38 @@
 [println]
-["Loritta is so cute!"]
-push_bool true
-sf 24
+["Loritta is so cute! (", ")"]
+// This will repeat 100 times
+push_int 0
+store 0
+
+// The iteration
+load 0
+// The iteration count
+push_int 100
+// Are they the same?
+equal
+
+// Skip if false...
+sf 8
+bye // This will only be executed if we have done all the loops
+
+// Now, because we want to print the iteration count, we need to keep the entire stack in the correct order
+
+// Push the ")" to the stack
+push_const 1
+// Load the iteration count
+load 0
+// Push the "Loritta is so cute! (" to the stack
 push_const 0
-call 0, 1
-jump 0
+
+// Call the print!
+call 0, 3
+// Load the iteration count
+load 0
+// Push 1 to the stack
+push_int 1
+// Add them!
+add
+// And now we store it back
+store 0
+// Jump back to the iteration loop start
+jump 16
