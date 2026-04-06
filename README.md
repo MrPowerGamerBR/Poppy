@@ -2,7 +2,9 @@
 
 Poppy is a stack-based bytecode interpreter in Kotlin that I made for funsies and for learning purposes, and because programming is *fun*. :3
 
-The reason why I made this is because [Butterscotch](https://github.com/MrPowerGamerBR/Butterscotch) is a GameMaker: Studio runner, and to execute GameMaker: Studio's game code, we have a bytecode interpreter. However, Butterscotch was created with the help of LLMs, so while I know how the interpreter works on a high level and while I have reviewed the interpreter code before, you don't *fully* understand it until you actually try coding it yourself. I've already written a [stack-based bytecode interpreter by hand years ago](https://mrpowergamerbr.com/br/blog/2020-09-20-inutilidades-gamemaker-studio-vm), but because it was so long ago, I've decided to do it again!
+The reason why I made this is because I'm developing [Butterscotch](https://github.com/MrPowerGamerBR/Butterscotch), a GameMaker: Studio runner. GameMaker: Studio games use a stack-based bytecode for their code, so, in Butterscotch, we have a bytecode interpreter.
+
+However, Butterscotch was created with the help of LLMs, so while I know how the interpreter works on a high level and while I have reviewed the interpreter code before, I didn't *fully* understand how it actually worked ("uuhh what the stack actually does???"). So, to keep my programming skills in check, I've decided to create my own stack-based bytecode interpreter. I've already written a [stack-based bytecode interpreter by hand years ago](https://mrpowergamerbr.com/br/blog/2020-09-20-inutilidades-gamemaker-studio-vm), but because it was so long ago, I've decided to do it again!
 
 This is a VERY basic bytecode interpreter, done in 2h30m, so it has a lot of missing features (only integer add/sub/mul/div/mod support, can only push integers and string constants, etc). But it works! The purpose of the project was not to be a full-featured bytecode interpreter, it was to be a "featured enough" bytecode interpreter that I could test my knowledge and fill in gaps. After all, programming is a skill, and if you don't "train" it by coding things manually, you will get lazy.
 
