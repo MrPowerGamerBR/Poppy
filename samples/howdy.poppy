@@ -1,0 +1,4 @@
+[println]
+["Loritta is so cute!"]
+push_const 0
+call 0, 0

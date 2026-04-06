@@ -1,0 +1,10 @@
+[println]
+[]
+// Pushes 8 to the stack, the stack is [8]
+push_int 8
+// Pushes 8 to the stack, the stack is [8, 8]
+push_int 8
+// Pops the top 2 elements from the stack, multiplies it and pushes - The stack is [64]
+mul
+// Calls the function name with index 0 (in this case, println) and pops and pushes 1 argument to the function
+call 0, 1

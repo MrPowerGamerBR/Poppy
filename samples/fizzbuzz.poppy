@@ -1,0 +1,94 @@
+[print, println]
+["Fizz", "Buzz", "<<iteration end>>"]
+// Given an integer n, for every positive integer i <= n, the task is to print,
+// "FizzBuzz" if i is divisible by 3 and 5,
+// "Fizz" if i is divisible by 3,
+// "Buzz" if i is divisible by 5
+// "i" as a string, if none of the conditions are true
+// ---
+// For reference, math order is:
+// a = pop()
+// b = pop()
+// b % a
+// So for a stack like this: [5, 3]
+// The order would be
+// 5 % 3
+//
+// This is "n"
+push_int 64
+push_int 1
+// We do +1 because the check is >= NOT >
+add
+store 0
+// This is "i"
+// We start at 1
+push_int 1
+store 1
+// Now we need to create a "loop" that repeats from n to i
+// This will load the "n"
+load 0
+load 1
+// This will push "true" or "false"
+equal
+// If it is false, we'll exit because we have already done what we needed to do
+// sf = "Skip if false"
+sf 8
+bye
+
+// This is a "have we printed Fizz or Buzz on this iteration?" flag
+push_int 0
+store 2
+
+// Load the i (div 3)
+load 1
+push_int 3
+mod
+push_int 0
+equal
+sf 32
+// It is divisible by 3!
+push_const 0
+call 0, 1
+// Set the printed flag
+push_int 1
+store 2
+
+// Load the i (div 5)
+load 1
+push_int 5
+mod
+push_int 0
+equal
+sf 32
+// It is divisible by 5!
+push_const 1
+call 0, 1
+// Set the printed flag
+push_int 1
+store 2
+
+// Did we print this iteration?
+load 2
+st 16
+// If not, print i
+load 1
+call 0, 1
+
+// And now we need to load the i AGAIN
+load 1
+// And +1!
+push_int 1
+add
+// And store it!
+store 1
+
+// Before we leave, we'll print the "<<iteration end>>" string
+// Poppy does not support the "\n" constant because I'm lazy
+// But we COULD abuse the fact that the interpreter supports println to print "nothing"
+// However we'll keep the "<<iteration end>>" string because it is useful to trace the prints
+push_const 2
+call 1, 1
+// call 1, 0
+
+// Jump back to the top of the loop
+jump 48
