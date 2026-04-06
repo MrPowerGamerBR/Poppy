@@ -145,6 +145,9 @@ class VM(
                 BYE -> {
                     this.ip = bytecodeReader.byteArray.size
                 }
+                PUSH_BOOL -> {
+                    this.stack.push(BooleanRValue(extra == 1))
+                }
             }
         }
     }

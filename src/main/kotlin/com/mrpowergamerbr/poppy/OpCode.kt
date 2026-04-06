@@ -19,7 +19,8 @@ enum class OpCode(val op: UByte) {
     EQUAL(0x15u),
     ST(0x16u),
     SF(0x17u),
-    BYE(0x18u), ;
+    BYE(0x18u),
+    PUSH_BOOL(0x19u);
 
     companion object {
         fun fromCode(op: UByte): OpCode {

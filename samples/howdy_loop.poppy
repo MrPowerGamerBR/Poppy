@@ -1,4 +1,7 @@
 [println]
 ["Loritta is so cute!"]
+push_bool true
+sf 24
 push_const 0
 call 0, 1
+jump 0

@@ -182,6 +182,9 @@ class PoppyAssembleCommand : CliktCommand(name = "assemble") {
                 OpCode.BYE -> {
                     codeChunkWriter.writeIntLe(0)
                 }
+                OpCode.PUSH_BOOL -> {
+                    codeChunkWriter.writeIntLe(if (extra == "true") 1 else if (extra == "false") 0 else error("Invalid boolean value: $extra"))
+                }
             }
         }
 
